@@ -1,0 +1,15 @@
+<table datatable class="table row-border hover" >
+  <thead>
+  <tr>
+    <th>Timestamp</th>
+    <th>Name</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let rec of this.dataForTable">
+    <td>{{rec.timestamp}}</td>
+    <td>{{rec.name}}</td>
+  </tr>
+  </tbody>
+</table>

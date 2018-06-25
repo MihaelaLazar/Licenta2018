@@ -1,0 +1,26 @@
+<div id="suggestion" *ngIf="this.suggestionForSelectVSOther != null" (mouseover)="showDivWithHoverStyles('suggestion')"
+     (mouseout)="showAllDivsWithDefaultStyles('suggestion')"
+     [ngStyle]="hoveredDivId === 'suggestion' ? hoveredDivStyles : defaultDivStyles"
+     style="margin-left: 4%">
+  <img [src]="'assets/images/special-attention.png'" style="width: 1.2rem; height: 1rem;"/>
+  <a style="left: 50%; color: black;">{{this.suggestionForSelectVSOther}}</a>
+</div>
+<tr></tr>
+<ul class="items" *ngFor="let item of this.data; let i = index">
+  <li id=i *ngIf="item.suggestion" style=" background-color: white; color: white;"
+      (mouseover)="showDivWithHoverStyles(i)"
+      (mouseout)="showAllDivsWithDefaultStyles(i)"
+      [ngStyle]="hoveredDivId === i ? hoveredDivStyles : defaultDivStyles">
+    <div *ngIf="item.suggestion">
+
+      <img [src]="'assets/images/special-attention.png'" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+      <a style="left: 50%; color: black;">{{item.suggestion}}</a>
+    </div>
+
+  </li>
+</ul>
+
+<div *ngIf="this.suggestionForSelectVSOther == null && this.data == null">
+  No suggestions
+</div>
+

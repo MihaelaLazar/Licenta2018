@@ -1,0 +1,10 @@
+<div style="overflow-y: scroll; height: 400px;">
+  <ul class="items" *ngFor="let item of this.columnsList; let i = index">
+    <li class="row, evenRow">
+      <a style="color: black; width: 90%" [routerLink]="['/transactions', item.hashedQuery]">{{item.operation}}</a>
+      <a style="left: 50%; color: black; position: -webkit-sticky"> {{item.name}} - {{item.numberOfUsages}} times
+        used</a>
+      <p><ngb-progressbar showValue="true" height="20px" type="{{item.progressType}}" [value]="item.percentage"></ngb-progressbar></p>
+    </li>
+  </ul>
+</div>

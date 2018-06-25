@@ -1,0 +1,95 @@
+<div class="row">
+  <div class="col-lg-8">
+
+
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-bar-chart"></i> Transactions in time
+      </div>
+      <div class="card-body">
+        <app-line-chart-queries-in-time></app-line-chart-queries-in-time>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+    <div class="mb-0 mt-4">
+      <i class="fa fa-newspaper-o"></i> Most time consuming queries
+    </div>
+    <hr class="mt-2">
+
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-table"></i> Queries/ Transactions
+      </div>
+      <div class="card-body" style="overflow-y: scroll; height: 350px">
+        <app-transactions-list></app-transactions-list>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+
+  </div>
+  <div class="col-lg-4">
+    <div class="row" style="width: inherit">
+      <div class="card mb-3" style="width: inherit">
+        <div class="card-header">
+          <i class="fa fa-bar-chart"></i> Top most accessed operations in time
+        </div>
+        <div class="card-body">
+          <app-line-chart [hashedQueryOfTransaction]="'all'"></app-line-chart>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+    <div class="row" style="width: inherit">
+      <div class="card mb-5" style="width: inherit; height: inherit">
+        <div class="card-header">
+          <i class="fa fa-bar-chart"></i> Top database operations by time consumed
+        </div>
+        <div class="card-body">
+          <app-line-chart-queries-by-time-consumed></app-line-chart-queries-by-time-consumed>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+
+    <div class="row" style="width: inherit; margin-top: 8%;">
+      <div class="card mb-5" style="width: inherit; height: inherit">
+        <div class="card-header">
+          <i class="fa fa-bar-chart"></i> Live executed queries
+        </div>
+        <div class="card-body" style="height: 350px; overflow-y: scroll">
+          <ul class="items" *ngFor="let item of this.dataForTable; let i = index">
+            <li class="row, evenRow" placement="bottom" ngbTooltip="{{item.name}}">
+              <a style=" color: black; position: -webkit-sticky">{{item.timestamp}}:  &nbsp; {{item.shortenedName}} ...</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer small text-muted">Updated at {{lastUpdated}}</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fa fa-pie-chart"></i>Pie Charts
+  </div>
+  <div class="card-body">
+    <div class="row content">
+      <div class="col-sm-6 sidenav">
+        <div class="card-header">
+          Types of Queries used
+        </div>
+        <app-sql-chart></app-sql-chart>
+      </div>
+      <div class="col-sm-6 sidenav">
+        <div class="card-header">
+          Queried tables
+        </div>
+        <app-table-query-chart></app-table-query-chart>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>

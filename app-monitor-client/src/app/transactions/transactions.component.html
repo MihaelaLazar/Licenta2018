@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card mb-3" style="height: -webkit-fill-available">
+      <div class="card-header">
+        <i class="fa fa-table"></i> Transactions
+      </div>
+      <div class="card-body"  style="overflow-y: scroll ">
+        <app-transactions-list ></app-transactions-list>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card mb-3" style="height: -webkit-fill-available;overflow-y: scroll ">
+          <div class="card-header">
+            <i class="fa fa-table"></i> Transaction details
+          </div>
+          <div class="card-body" [hidden]="!hash">
+            <h6 style="text-transform: uppercase">{{this.operationName}}</h6>
+          </div>
+          <div class="card-body" [hidden]="!hash">
+            <div class="card-header">
+              <h4>Calls per day</h4>
+            </div>
+            <div >
+              <app-line-chart [hashedQueryOfTransaction]='hash'></app-line-chart>
+            </div>
+
+            <div class="card-header">
+              <h4>AVG Query time</h4>
+            </div>
+            <div >
+              <app-transaction-avg-time-chart [hashedQueryOfTransaction]='hash' ></app-transaction-avg-time-chart>
+            </div>
+
+          </div>
+          <div class="card-body" [hidden]="hash">
+            Select a query
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

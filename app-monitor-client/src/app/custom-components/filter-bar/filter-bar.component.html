@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-10">
+        <div class="row">
+          <div class="col col-auto">
+            <app-custom-dropdown [items]="this.listOfApplications"
+                                 [selectedKey]="this._elasticsearchFilterService.getApplicationId()"
+                                 (onSelectionChange)="this.onApplicationIdChanged($event)"></app-custom-dropdown>
+          </div>
+          <div class="col col-auto">
+            <app-custom-date-picker [selectedDate]="this._elasticsearchFilterService.getDate()"
+                                    (onSelectionChanged)="this.onDateChanged($event)"></app-custom-date-picker>
+          </div>
+          <div class="col col-auto">
+            <app-custom-time-picker [selectedTime]="this._elasticsearchFilterService.getTime()"
+                                    (onSelectionChanged)="this.onTimeChanged($event)"></app-custom-time-picker>
+          </div>
+          <div class="col col-auto">
+            <app-custom-dropdown [items]="this.listOfPeriods"
+                                 [selectedKey]="this._elasticsearchFilterService.getPeriod()"
+                                 (onSelectionChange)="this.onPeriodChanged($event)"></app-custom-dropdown>
+          </div>
+        </div>
+      </div>
+      <!--<div [hidden]="!isCollapsed" class="col-10">-->
+        <!--Filter-->
+      <!--</div>-->
+      <!--<div class="col-2 text-right">-->
+        <!--<button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed">-->
+          <!--Toggle filters-->
+        <!--</button>-->
+      <!--</div>-->
+    </div>
+  </div>
+</div>
+
+<hr />

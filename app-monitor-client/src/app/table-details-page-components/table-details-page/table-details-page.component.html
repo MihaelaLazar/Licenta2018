@@ -1,0 +1,75 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-10">
+        <div class="row">
+          <div class="col col-auto">
+            Choose table :
+            <app-custom-dropdown [items]="this.listOfTables"
+                                 [selectedKey]="this.selectedTable"
+                                 (onSelectionChange)="this.onTableChanged($event)"></app-custom-dropdown>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-5">
+        <div class="row">
+          <div class="col-10">
+            <h4>Number of queries in time</h4>
+            <div class="row">
+              <div class="col col-auto">
+                <table-number-of-queries-chart [tableName]="this.selectedTable"></table-number-of-queries-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-10">
+            <h4>Min-max queries response time (ms)</h4>
+            <div class="row">
+              <div class="col col-auto">
+                <table-min-max-chart [tableName]="this.selectedTable"></table-min-max-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-10">
+            <h4>Types of queries</h4>
+            <div class="row">
+              <div class="col col-auto">
+                <types-of-queries-chart [tableName]="this.selectedTable"></types-of-queries-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-7">
+        <div class="row">
+          <div class="col" style="">
+            <h4>Columns used in 'WHERE' clause</h4>
+            <columns-used [tableName]="this.selectedTable"></columns-used>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col" style="height: 400px;">
+            <h4>Suggestions for optimization</h4>
+            <suggestions></suggestions>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

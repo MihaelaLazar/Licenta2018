@@ -1,0 +1,16 @@
+.menudemoBasicUsage .md-menu-demo {
+  padding: 24px; }
+
+.menudemoBasicUsage .menu-demo-container {
+  min-height: 200px; }
+
+.oddRow {
+  background-color: white;
+  color: white;
+}
+
+.evenRow {
+  color: white;
+  background-color: #88aba694;
+}
+

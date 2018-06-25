@@ -1,0 +1,9 @@
+.oddRow {
+  background-color: white;
+  color: white;
+}
+
+.evenRow {
+  color: white;
+  background-color: #88aba694;
+}

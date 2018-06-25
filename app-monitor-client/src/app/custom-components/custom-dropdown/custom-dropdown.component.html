@@ -1,0 +1,8 @@
+<div ngbDropdown class="d-inline-block">
+  <button class="btn" id="dropdownBasic1" ngbDropdownToggle>{{this.getValueOfSelectedKey()}}</button>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+    <div *ngFor="let item of this.items;">
+      <button class="dropdown-item" (click)="changeSelected(item.key)">{{item.value}}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="row" *ngIf="isDataAvailable">
+  <div class="col-md-12">
+    <div style="display: block;">
+      <canvas baseChart width="400" height="200" style="margin-top: 0%"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              [colors]="lineChartColors"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"
+              chart-legend="false"
+      ></canvas>
+    </div>
+  </div>
+</div>
+
